@@ -42,9 +42,10 @@ if has("autocmd")
 
   " These are based simply on style guides or personal preference
   autocmd FileType c setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType java setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType markdown setlocal textwidth=79
+  autocmd FileType perl6 setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
 " Set the background color for columns greater than 80
@@ -52,3 +53,4 @@ let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 set cursorline
+
