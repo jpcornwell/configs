@@ -1,7 +1,27 @@
 
+# Default colors
 colorscheme lucius
 
+# Map 'jk' to <esc>
 hook global InsertChar k %{ try %{
   exec -draft hH <a-k>jk<ret> d
   exec <esc>
 }}
+
+# For all files
+hook global WinCreate .* %{
+  # Add relative numbering
+  add-highlighter window/number-lines number-lines -relative
+}
+
+# For Raku code
+# TODO: Improve file recognition to include module files and others
+hook global WinCreate ^.*\.pl6$ %{
+  # This gives a nice yellow when syntax highlighting is disabled
+  # TODO: Replace this with a dedicated colorscheme that has minimal syntax highlighting
+  colorscheme gruvbox
+
+  # Remove syntax highlighting
+  set window disabled_hooks '.+-highlight'
+}
+
