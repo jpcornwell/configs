@@ -15,8 +15,8 @@ hook global WinCreate .* %{
 }
 
 # For Raku code
-# TODO: Improve file recognition to include module files and others
-hook global WinCreate ^.*\.pl6$ %{
+# TODO: Improve file recognition to include module files
+hook global WinCreate ^.*\.(pl6|raku)$ %{
   # This gives a nice yellow when syntax highlighting is disabled
   # TODO: Replace this with a dedicated colorscheme that has minimal syntax highlighting
   colorscheme gruvbox
